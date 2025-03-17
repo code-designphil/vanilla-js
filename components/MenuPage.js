@@ -23,11 +23,13 @@ export default class MenuPage extends HTMLElement {
     window.addEventListener("appmenuchange", () => {
       this.render();
     });
+
+    this.render();
   }
 
   render() {
+    const menu = this.root.querySelector("#menu");
     if (app.store.menu) {
-      const menu = this.root.querySelector("#menu");
       menu.textContent = "";
       for (let category of app.store.menu) {
         const liCategory = document.createElement("li");
